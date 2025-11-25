@@ -1,190 +1,127 @@
-📘 Projeto Imóveis – TCC
+# 🏛️ Projeto Imóveis TCC
 
-Aplicação completa para gerenciamento de imóveis (CRUD), incluindo autenticação de usuários, painel administrativo e operações básicas de um sistema imobiliário.
+Sistema Web para Gestão Imobiliária, desenvolvido como parte do Trabalho de Conclusão de Curso (TCC). Permite o cadastro, autenticação de usuários, e gestão completa de imóveis.
 
-📑 Sumário
+---
 
-Visão Geral
+## 📌 1. Visão Geral  
+Esse projeto centraliza a administração de imóveis para uma imobiliária, com painel restrito para usuários logados, CRUD de imóveis, e segurança básica (hash de senha e controle de sessão).
 
-Tecnologias Utilizadas
+---
 
-Funcionalidades
+## 🎯 2. Objetivos
 
-Requisitos
+**Objetivo Geral**  
+Desenvolver uma aplicação web que facilite o gerenciamento de imóveis por parte de uma imobiliária, através de uma interface segura e simples de usar.
 
-Como Rodar o Projeto
+**Objetivos Específicos**  
+- Autenticação de usuários  
+- Criptografia de senhas  
+- CRUD completo de imóveis  
+- Painel administrativo restrito a usuários autenticados  
+- Interface com design moderno e responsivo  
 
-Scripts SQL do Banco de Dados
+---
 
-Estrutura de Pastas
+## 🧱 3. Metodologia  
+O projeto foi implementado em etapas, seguindo modelo incremental: primeiro o protótipo de login, depois a integração com o banco (MySQL), seguido pela implementação de CRUD de imóveis e validações de sessão.
 
-Configuração do Banco de Dados
+Linguagem de back-end: **PHP**  
+Banco de dados: **MySQL**
 
-Screenshots (opcional)
+---
 
-Autor
+## 🧩 4. Tecnologias Utilizadas
 
-Licença
+| Camada | Tecnologias |
+|---|---|
+| Backend | PHP |
+| Banco de Dados | MySQL |
+| Front-end | HTML5, CSS3, JavaScript, Bootstrap |
+| Segurança | `password_hash()`, `password_verify()` |
+| Servidor | Apache (XAMPP ou similar) |
 
-📌 Visão Geral
+---
 
-Este projeto foi desenvolvido como TCC com o objetivo de criar uma plataforma simples e funcional para gerenciamento de imóveis, incluindo cadastro, edição, exclusão e listagem, além de controle de usuários com autenticação de login.
+## 🏗️ 5. Estrutura do Projeto  
+O projeto segue uma arquitetura simples:  
+- **Telas PHP/HTML** para interface e formulários  
+- **Código PHP** para regras de negócio e autenticação  
+- **Banco MySQL** para persistência de dados  
+- Validação de sessão para garantir acesso seguro ao painel administrativo
 
-🛠 Tecnologias Utilizadas
+---
 
-PHP 8+
+## 🔐 6. Segurança e Controle de Acesso  
+- Criptografia de senha com `password_hash()`  
+- Verificação de login com `password_verify()`  
+- Controle de sessão via PHP (`$_SESSION`)  
+- Redirecionamento para login caso usuário não esteja autenticado  
 
-MySQL
+---
 
-XAMPP (Apache + MySQL)
+## 🗄️ 7. Banco de Dados  
 
-HTML5
+### Tabela `usuarios`  
+| Campo | Tipo | Propósito |
+|---|---|---|
+| id | INT PK AI | Identificador do usuário |
+| nome | VARCHAR(255) | Nome do usuário |
+| email | VARCHAR(255) | Login |
+| senha | VARCHAR(255) | Hash da senha |
 
-CSS3
+### Tabela `imoveis`  
+| Campo | Tipo | Propósito |
+|---|---|---|
+| id | INT PK AI | Identificador do imóvel |
+| titulo | VARCHAR(255) | Título/nome do imóvel |
+| endereco | TEXT | Endereço completo |
+| preco | DECIMAL | Valor de venda ou locação |
+| descricao | TEXT | Descrição detalhada |
 
-JavaScript
+---
 
-Bootstrap 5
+## 💻 8. Funcionalidades
 
-⭐ Funcionalidades
+- Registro e login de usuários (com criptografia de senha)  
+- Painel restrito para usuários logados  
+- CRUD de imóveis: criar, ler, atualizar e excluir  
+- Upload de imagens de imóveis (pasta `uploads/imoveis`)  
+- Interface responsiva com Bootstrap  
 
-Login e autenticação de usuários
+---
 
-Cadastro de imóveis
+## 🌐 9. Fluxo de Uso
 
-Listagem com filtros
+1. Usuário se **cadastra**  
+2. Faz **login**  
+3. Acessa o **painel**  
+4. Realiza operações de **CRUD em imóveis**  
+5. Pode fazer **logout**  
 
-Edição de imóveis
+Se tentar acessar o painel sem estar logado, é redirecionado para a página de login.
 
-Exclusão de imóveis
+---
 
-Cadastro de usuários
+## 🧪 10. Testes e Validação  
+- Senhas são armazenadas criptografadas  
+- Login autenticado funciona corretamente  
+- Acesso não autorizado ao painel é bloqueado  
+- Operações de CRUD (imóveis) testadas com sucesso  
 
-Dashboard administrativa
+---
 
-Proteção de rotas com session_start()
+## 🚀 11. Próximos Passos / Possíveis Melhorias  
+- Permissões por níveis de usuário (admin, corretor, cliente)  
+- Sistema de busca avançada por imóvel  
+- Upload de múltiplas imagens por imóvel  
+- Dashboard com estatísticas e gráficos  
+- Responsividade ainda mais refinada para dispositivos móveis  
 
-Sidebar com navegação
+---
 
-📦 Requisitos
+## 📥 12. Como Executar Localmente
 
-PHP 8+
-
-MySQL 5.7+ / MariaDB
-
-XAMPP (recomendado)
-
-Navegador moderno
-
-Git (opcional)
-
-🚀 Como Rodar o Projeto
-1️⃣ Clone o repositório
-git clone https://github.com/Kauanguisilva/projeto-imoveis-tcc
-
-2️⃣ Mova o projeto para a pasta do servidor
-C:/xampp/htdocs/projeto-imoveis-tcc
-
-3️⃣ Inicie o XAMPP
-
-Ative Apache
-
-Ative MySQL
-
-4️⃣ Crie o banco de dados
-
-No phpMyAdmin, crie o banco:
-
-imobiliaria_db
-
-5️⃣ Importe os scripts SQL (abaixo)
-6️⃣ Configure a conexão
-
-Arquivo: config.php
-Ajuste conforme seu ambiente:
-
-<?php
-$usuario = "root";
-$senha = "";
-$database = "imobiliaria_db";
-$host = "localhost";
-
-$conn = new mysqli($host, $usuario, $senha, $database);
-
-if($conn->connect_error){
-    die("Falha ao conectar: " . $conn->connect_error);
-}
-?>
-
-7️⃣ Acesse o sistema:
-http://localhost/projeto-imoveis-tcc
-
-🗄 Scripts SQL do Banco de Dados
-🔹 Tabela de usuários
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-🔹 Inserir usuário administrador
-INSERT INTO usuarios (nome, email, senha)
-VALUES ('Administrador', 'admin@admin.com', MD5('admin123'));
-
-🔹 Tabela de imóveis
-CREATE TABLE imoveis (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(150) NOT NULL,
-    descricao TEXT,
-    endereco VARCHAR(255),
-    preco DECIMAL(10,2),
-    tipo VARCHAR(50),
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-📂 Estrutura de Pastas
-projeto-imoveis-tcc/
-│
-├── config.php
-├── index.php
-├── login.php
-├── logout.php
-│
-├── painel/
-│   ├── dashboard.php
-│   ├── cadastrar-imovel.php
-│   ├── editar-imovel.php
-│   ├── excluir-imovel.php
-│   ├── listar-imoveis.php
-│   ├── usuarios/
-│       ├── cadastrar.php
-│       ├── listar.php
-│
-├── css/
-├── js/
-├── img/
-└── README.md
-
-⚙ Configuração do Banco de Dados
-
-Banco: imobiliaria_db
-
-Charset recomendado: utf8mb4_unicode_ci
-
-Usuário padrão: root
-
-Senha: (vazia) no XAMPP
-
-🖼 Screenshots (opcional)
-
-Adicione aqui suas imagens:
-
-![Dashboard](img/dashboard.png)
-![Login](img/login.png)
-
-
-📄 Licença
-
-Este projeto é livre para uso educacional e não possui licença proprietária.
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/Kauanguisilva/projeto-imoveis-tcc.git
