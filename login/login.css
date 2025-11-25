@@ -1,0 +1,146 @@
+/* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ====== BACKGROUND ====== */
+body {
+    width: 100%;
+    height: 100vh;
+    background: #0b2f2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ====== LOGO ====== */
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-logo {
+    width: 160px;
+    height: auto;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    width: 900px;
+    height: 550px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ====== CONTENT ====== */
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: 0.5s ease;
+    padding: 40px;
+}
+
+.first-column,
+.second-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.first-column {
+    background: #0b2f2f;
+    color: white;
+}
+
+/* ====== TEXTOS ====== */
+.title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* ====== FORM ====== */
+.form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.label-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #e8e8e8;
+    padding: 12px 15px;
+    border-radius: 30px;
+}
+
+.label-input i {
+    margin-right: 10px;
+}
+
+.label-input input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* ====== SENHA OLHO ====== */
+#iconSenha {
+    cursor: pointer;
+}
+
+/* ====== BOTÕES ====== */
+.btn {
+    width: 160px;
+    padding: 10px 0;
+    font-size: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+.btn.btn-primary {
+    background: white;
+    color: #0b2f2f;
+}
+
+.btn.btn-second {
+    background: #0b2f2f !important;
+    color: white;
+}
+
+/* ====== ANIMAÇÃO DE TROCA ====== */
+.second-content {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #fff;
+}
+
+.show-login {
+    transform: translateX(-100%);
+}
